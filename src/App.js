@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
+import Navbar from './components/Navbar/Navbar';
+import GlobalStyles from './GlobalStyles';
+
 
 class App extends Component {
   render() {
-    return <h1>Hi There!</h1>
+    return (
+      <div>
+        <GlobalStyles />
+        <Navbar />
+      </div>
+    )
   }
 }
 
