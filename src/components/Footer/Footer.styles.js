@@ -14,8 +14,11 @@ export const Title = styled.div`
 `;
 
 export const Links = styled.div`
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    padding-left: 15rem;
 `;
 
 export const Menu = styled.div`
@@ -29,15 +32,17 @@ export const MenuTitle = styled.h1`
     color: white;
     font-weight: 700;
     font-size: 14px;
-    padding-top: 0;
+    padding-top: 8rem;
+    padding-bottom: 2rem;
 `;
 
 export const FooterContainer = styled(Container)`
     width: 100%;
     display: flex;
-    // justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
+    padding-top: 5rem;
     ${Container};
 `;
 
@@ -52,7 +57,9 @@ export const Social = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 1rem;
 `;
 
 export const SocialItem = styled.div`
+    padding: 1rem;
 `;
