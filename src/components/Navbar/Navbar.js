@@ -10,6 +10,8 @@ import
     Menu,
     MenuItem,
     MenuLink,
+    Info,
+    Login
 } from './Navbar.styles';
 
 class Navbar extends Component {
@@ -17,24 +19,8 @@ class Navbar extends Component {
         super(props);
 
         this.state = {
-            click: false,
-            button: true
+            click: false
         }
-
-        this.showButton = this.showButton.bind(this);
-    }
-
-    showButton() {
-        if(window.innerWidth<= 1000){
-            this.setState({button: false});
-        } else{
-            this.setState({button: true});
-        }
-    }
-
-    componentDidMount() {
-        this.showButton();
-        window.addEventListener('resize', this.showButton);
     }
 
     handleClick() {
@@ -51,26 +37,30 @@ class Navbar extends Component {
             <div>
                 <Nav>
                     <NavbarContainer>
-                        <NavLogo >Shortly</NavLogo>
+                        <NavLogo />
                         <MenuIcon onClick={() => this.handleClick()}>
                             {this.state.click ? <BiX/> : <BiMenu/>}
                         </MenuIcon>
                         <Menu onClick={() => this.handleClick()} click={this.state.click}>
-                            <MenuItem>
-                                <MenuLink onClick={() => this.closeMenu()}>Features</MenuLink>
-                            </MenuItem>
-                            <MenuItem>
-                                <MenuLink onClick={() => this.closeMenu()}>Pricing</MenuLink>
-                            </MenuItem>
-                            <MenuItem>
-                                <MenuLink onClick={() => this.closeMenu()}>Resources</MenuLink>
-                            </MenuItem>
-                            <MenuItem>
-                                <MenuLink onClick={() => this.closeMenu()}>Login</MenuLink>
-                            </MenuItem>
-                            <MenuItem>
-                                <Button onClick={() => this.closeMenu()}>Signup</Button>
-                            </MenuItem>
+                            <Info>
+                                <MenuItem>
+                                    <MenuLink onClick={() => this.closeMenu()}>Features</MenuLink>
+                                </MenuItem>
+                                <MenuItem>
+                                    <MenuLink onClick={() => this.closeMenu()}>Pricing</MenuLink>
+                                </MenuItem>
+                                <MenuItem>
+                                    <MenuLink onClick={() => this.closeMenu()}>Resources</MenuLink>
+                                </MenuItem>
+                            </Info>
+                            <Login>
+                                <MenuItem>
+                                    <MenuLink onClick={() => this.closeMenu()}>Login</MenuLink>
+                                </MenuItem>
+                                <MenuItem>
+                                    <Button onClick={() => this.closeMenu()}>Signup</Button>
+                                </MenuItem>
+                            </Login>
                         </Menu>
                     </NavbarContainer>
                 </Nav>

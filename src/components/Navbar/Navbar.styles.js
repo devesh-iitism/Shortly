@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Container} from '../../GlobalStyles';
-
+import logo from '../../assets/logo.svg';
 
 export const Nav = styled.nav` 
     font-size: 18px;
@@ -14,22 +14,22 @@ export const Nav = styled.nav`
 `;
 
 export const NavbarContainer = styled(Container)`
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
     height: 80px;
     ${Container};
 `;
 
-export const NavLogo = styled.a`
-    color: black;
+export const NavLogo = styled.div`
+    background: url(${logo}) no-repeat;
+    width: 15rem;
+    height: 4rem;
     padding-top: 1.6rem;
     cursor: pointer;
     display: flex;
     align-items: center;
-    text-decoration: none;
-    font-size: 2.5rem;
-    font-weight: 800;
     transition: all .5s ease;
     &:hover{
         transform: scale(1.08);
@@ -39,7 +39,7 @@ export const NavLogo = styled.a`
 
 export const MenuIcon = styled.div`
     display: none;
-    @media (max-width: 1000px) {
+    @media (max-width: 640px) {
         display: block;
         position: absolute;
         top: 0;
@@ -51,10 +51,11 @@ export const MenuIcon = styled.div`
 `;
 
 export const Menu = styled.ul`
+    width: 100%;
     display: flex;
     align-items: center;
     text-align: center;
-    @media only screen and (max-width:1000px) {
+    @media only screen and (max-width:640px) {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -70,7 +71,7 @@ export const Menu = styled.ul`
 export const MenuItem = styled.li`
     list-style: none;
     height: 80px;
-    @media only screen and (max-width:1000px){
+    @media only screen and (max-width:640px){
         width: 100%;
         &:hover {
             border: none;
@@ -91,12 +92,12 @@ export const MenuLink = styled.a`
     transition: all .2s ease;
     &:hover {
         color: black;
-        
+        cursor: pointer;
     }
     &:active {
         color: black;
     }
-    @media only screen and (max-width:1000px){
+    @media only screen and (max-width:640px){
         display: block;
         padding: 3rem;
         text-align: center;
@@ -106,11 +107,29 @@ export const MenuLink = styled.a`
 
 export const MenuItemBtn = styled.li`
     list-style: none;
-    @media screen and (max-width:1000px){
+    @media screen and (max-width:640px){
         display: flex;
         justify-content: center;
         align-items: center;
         width: 50%;
         height: 120px;
+    }
+`;
+
+export const Info = styled.div`
+    display: flex;
+    width: 100%;
+
+    @media only screen and (max-width:640px) {
+        flex-direction: column;
+    }
+`;
+
+export const Login = styled.div`
+    display: flex;
+    float: right;
+
+    @media only screen and (max-width:640px) {
+        flex-direction: column;
     }
 `;
